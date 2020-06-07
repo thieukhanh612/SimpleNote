@@ -115,7 +115,7 @@ namespace SimpleNote
                     btn.BackColor = Color.Yellow;
                 }
 
-                if (isEqualDate(useDate, date))
+                if (isEqualDate(useDate, DateTime.Now))
                 {
                     btn.BackColor = Color.Green;
                 }
@@ -129,7 +129,7 @@ namespace SimpleNote
 
         bool isEqualDate (DateTime dateA, DateTime dateB)
         {
-            return dateA.Year == dateB.Year && dateA.Month == dateB.Month && dateA.Day == dateB.Day;
+            return (dateA.Year == dateB.Year && dateA.Month == dateB.Month && dateA.Day == dateB.Day);
         }
         bool HavenotesOnDate(DateTime date)
         {
@@ -251,10 +251,6 @@ namespace SimpleNote
             
         }
 
-
-        private void nmNotify_ValueChanged(object sender, EventArgs e)
-        {
-            nmNotify.Enabled = ckbNotify.Checked;
-        }
+     
     }
 }

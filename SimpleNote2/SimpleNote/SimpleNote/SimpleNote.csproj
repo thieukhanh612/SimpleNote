@@ -49,6 +49,12 @@
     <Compile Include="Controllers\NoteController.cs" />
     <Compile Include="Controllers\RemindNoteController.cs" />
     <Compile Include="Controllers\TrashNoteController.cs" />
+    <Compile Include="Views\AboutBox1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\AboutBox1.Designer.cs">
+      <DependentUpon>AboutBox1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Ajob.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -91,6 +97,9 @@
     <Compile Include="Models\PlanItem.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Views\AboutBox1.resx">
+      <DependentUpon>AboutBox1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Ajob.resx">
       <DependentUpon>Ajob.cs</DependentUpon>
     </EmbeddedResource>

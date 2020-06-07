@@ -31,10 +31,10 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.txbJob = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.dtpDateRemind = new System.Windows.Forms.DateTimePicker();
             this.btnDel = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
             this.cbStatus = new System.Windows.Forms.ComboBox();
-            this.dtpDateRemind = new System.Windows.Forms.DateTimePicker();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -67,6 +67,15 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(377, 27);
             this.panel2.TabIndex = 1;
+            // 
+            // dtpDateRemind
+            // 
+            this.dtpDateRemind.CustomFormat = "dd/MM/yyy hh:mm";
+            this.dtpDateRemind.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpDateRemind.Location = new System.Drawing.Point(1, 2);
+            this.dtpDateRemind.Name = "dtpDateRemind";
+            this.dtpDateRemind.Size = new System.Drawing.Size(127, 20);
+            this.dtpDateRemind.TabIndex = 9;
             // 
             // btnDel
             // 
@@ -105,19 +114,11 @@
             this.cbStatus.TabIndex = 6;
             this.cbStatus.SelectedIndexChanged += new System.EventHandler(this.cbStatus_SelectedIndexChanged);
             // 
-            // dtpDateRemind
-            // 
-            this.dtpDateRemind.CustomFormat = "dd/MM/yyy hh:mm";
-            this.dtpDateRemind.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpDateRemind.Location = new System.Drawing.Point(1, 2);
-            this.dtpDateRemind.Name = "dtpDateRemind";
-            this.dtpDateRemind.Size = new System.Drawing.Size(127, 20);
-            this.dtpDateRemind.TabIndex = 9;
-            // 
             // Ajob
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Window;
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Margin = new System.Windows.Forms.Padding(2);

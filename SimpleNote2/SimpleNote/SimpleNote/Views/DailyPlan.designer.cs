@@ -46,7 +46,7 @@
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.panelJob);
             this.panel1.Location = new System.Drawing.Point(3, 33);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(665, 453);
             this.panel1.TabIndex = 0;
@@ -58,15 +58,17 @@
             this.panel3.Controls.Add(this.btnPreviousDay);
             this.panel3.Controls.Add(this.dtpkDate);
             this.panel3.Location = new System.Drawing.Point(5, 3);
-            this.panel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(658, 29);
             this.panel3.TabIndex = 1;
             // 
             // btnNextday
             // 
+            this.btnNextday.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SkyBlue;
+            this.btnNextday.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNextday.Location = new System.Drawing.Point(462, 2);
-            this.btnNextday.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnNextday.Margin = new System.Windows.Forms.Padding(2);
             this.btnNextday.Name = "btnNextday";
             this.btnNextday.Size = new System.Drawing.Size(46, 23);
             this.btnNextday.TabIndex = 2;
@@ -76,8 +78,10 @@
             // 
             // btnPreviousDay
             // 
+            this.btnPreviousDay.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SkyBlue;
+            this.btnPreviousDay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPreviousDay.Location = new System.Drawing.Point(134, 2);
-            this.btnPreviousDay.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnPreviousDay.Margin = new System.Windows.Forms.Padding(2);
             this.btnPreviousDay.Name = "btnPreviousDay";
             this.btnPreviousDay.Size = new System.Drawing.Size(46, 23);
             this.btnPreviousDay.TabIndex = 1;
@@ -88,7 +92,7 @@
             // dtpkDate
             // 
             this.dtpkDate.Location = new System.Drawing.Point(233, 3);
-            this.dtpkDate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtpkDate.Margin = new System.Windows.Forms.Padding(2);
             this.dtpkDate.Name = "dtpkDate";
             this.dtpkDate.Size = new System.Drawing.Size(180, 20);
             this.dtpkDate.TabIndex = 0;
@@ -97,13 +101,14 @@
             // panelJob
             // 
             this.panelJob.Location = new System.Drawing.Point(5, 37);
-            this.panelJob.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelJob.Margin = new System.Windows.Forms.Padding(2);
             this.panelJob.Name = "panelJob";
             this.panelJob.Size = new System.Drawing.Size(658, 409);
             this.panelJob.TabIndex = 0;
             // 
             // menuStrip1
             // 
+            this.menuStrip1.BackColor = System.Drawing.SystemColors.Window;
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnsToday});
@@ -125,11 +130,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(677, 396);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "DailyPlan";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DailyPlan";

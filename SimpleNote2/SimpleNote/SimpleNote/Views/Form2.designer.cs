@@ -45,22 +45,20 @@
             this.btnSunday = new System.Windows.Forms.Button();
             this.btnMonday = new System.Windows.Forms.Button();
             this.pnlMatrix = new System.Windows.Forms.Panel();
-            this.nmNotify = new System.Windows.Forms.NumericUpDown();
-            this.ckbNotify = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nmNotify)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.SystemColors.Window;
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Location = new System.Drawing.Point(9, 10);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(833, 458);
             this.panel1.TabIndex = 0;
@@ -68,13 +66,13 @@
             // 
             // panel3
             // 
+            this.panel3.BackColor = System.Drawing.SystemColors.Window;
+            this.panel3.Controls.Add(this.btnPreviours);
             this.panel3.Controls.Add(this.panel6);
             this.panel3.Controls.Add(this.btnNext);
-            this.panel3.Controls.Add(this.btnPreviours);
-            this.panel3.Controls.Add(this.btnToday);
             this.panel3.Controls.Add(this.dtpkDate);
             this.panel3.Location = new System.Drawing.Point(2, 2);
-            this.panel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(829, 40);
             this.panel3.TabIndex = 1;
@@ -82,51 +80,66 @@
             // 
             // panel6
             // 
-            this.panel6.Controls.Add(this.nmNotify);
-            this.panel6.Controls.Add(this.ckbNotify);
+            this.panel6.Controls.Add(this.btnToday);
             this.panel6.Location = new System.Drawing.Point(64, 5);
-            this.panel6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel6.Margin = new System.Windows.Forms.Padding(2);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(173, 35);
             this.panel6.TabIndex = 2;
             // 
             // btnNext
             // 
-            this.btnNext.Location = new System.Drawing.Point(708, 2);
-            this.btnNext.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnNext.BackColor = System.Drawing.Color.White;
+            this.btnNext.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnNext.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SkyBlue;
+            this.btnNext.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SkyBlue;
+            this.btnNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNext.Location = new System.Drawing.Point(502, 0);
+            this.btnNext.Margin = new System.Windows.Forms.Padding(2);
             this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(64, 35);
             this.btnNext.TabIndex = 1;
             this.btnNext.Text = ">";
-            this.btnNext.UseVisualStyleBackColor = true;
+            this.btnNext.UseVisualStyleBackColor = false;
             this.btnNext.Click += new System.EventHandler(this.btnNext_Click_1);
             // 
             // btnPreviours
             // 
-            this.btnPreviours.Location = new System.Drawing.Point(518, 2);
-            this.btnPreviours.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnPreviours.BackColor = System.Drawing.Color.White;
+            this.btnPreviours.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnPreviours.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SkyBlue;
+            this.btnPreviours.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPreviours.Location = new System.Drawing.Point(240, 2);
+            this.btnPreviours.Margin = new System.Windows.Forms.Padding(2);
             this.btnPreviours.Name = "btnPreviours";
             this.btnPreviours.Size = new System.Drawing.Size(64, 35);
             this.btnPreviours.TabIndex = 1;
             this.btnPreviours.Text = "<";
-            this.btnPreviours.UseVisualStyleBackColor = true;
+            this.btnPreviours.UseVisualStyleBackColor = false;
             this.btnPreviours.Click += new System.EventHandler(this.btnPreviours_Click_1);
             // 
             // btnToday
             // 
-            this.btnToday.Location = new System.Drawing.Point(596, 2);
-            this.btnToday.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnToday.BackColor = System.Drawing.Color.White;
+            this.btnToday.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnToday.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SkyBlue;
+            this.btnToday.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SkyBlue;
+            this.btnToday.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnToday.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnToday.Location = new System.Drawing.Point(0, 0);
+            this.btnToday.Margin = new System.Windows.Forms.Padding(2);
             this.btnToday.Name = "btnToday";
             this.btnToday.Size = new System.Drawing.Size(98, 35);
             this.btnToday.TabIndex = 1;
             this.btnToday.Text = "Today";
-            this.btnToday.UseVisualStyleBackColor = true;
+            this.btnToday.UseVisualStyleBackColor = false;
             this.btnToday.Click += new System.EventHandler(this.btnToday_Click_1);
             // 
             // dtpkDate
             // 
+            this.dtpkDate.CalendarTrailingForeColor = System.Drawing.Color.SkyBlue;
             this.dtpkDate.Location = new System.Drawing.Point(308, 11);
-            this.dtpkDate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtpkDate.Margin = new System.Windows.Forms.Padding(2);
             this.dtpkDate.Name = "dtpkDate";
             this.dtpkDate.Size = new System.Drawing.Size(190, 20);
             this.dtpkDate.TabIndex = 0;
@@ -137,7 +150,7 @@
             this.panel2.Controls.Add(this.panel5);
             this.panel2.Controls.Add(this.pnlMatrix);
             this.panel2.Location = new System.Drawing.Point(2, 54);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(831, 396);
             this.panel2.TabIndex = 0;
@@ -153,7 +166,7 @@
             this.panel5.Controls.Add(this.btnSunday);
             this.panel5.Controls.Add(this.btnMonday);
             this.panel5.Location = new System.Drawing.Point(2, 2);
-            this.panel5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel5.Margin = new System.Windows.Forms.Padding(2);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(826, 39);
             this.panel5.TabIndex = 2;
@@ -161,8 +174,11 @@
             // btnThursday
             // 
             this.btnThursday.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btnThursday.FlatAppearance.BorderSize = 0;
+            this.btnThursday.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnThursday.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThursday.Location = new System.Drawing.Point(368, 2);
-            this.btnThursday.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnThursday.Margin = new System.Windows.Forms.Padding(2);
             this.btnThursday.Name = "btnThursday";
             this.btnThursday.Size = new System.Drawing.Size(98, 35);
             this.btnThursday.TabIndex = 8;
@@ -172,8 +188,11 @@
             // btnFriday
             // 
             this.btnFriday.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btnFriday.FlatAppearance.BorderSize = 0;
+            this.btnFriday.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFriday.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFriday.Location = new System.Drawing.Point(470, 2);
-            this.btnFriday.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnFriday.Margin = new System.Windows.Forms.Padding(2);
             this.btnFriday.Name = "btnFriday";
             this.btnFriday.Size = new System.Drawing.Size(98, 35);
             this.btnFriday.TabIndex = 7;
@@ -184,8 +203,11 @@
             // btnTuesday
             // 
             this.btnTuesday.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnTuesday.FlatAppearance.BorderSize = 0;
+            this.btnTuesday.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTuesday.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTuesday.Location = new System.Drawing.Point(164, 2);
-            this.btnTuesday.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnTuesday.Margin = new System.Windows.Forms.Padding(2);
             this.btnTuesday.Name = "btnTuesday";
             this.btnTuesday.Size = new System.Drawing.Size(98, 35);
             this.btnTuesday.TabIndex = 6;
@@ -195,8 +217,11 @@
             // btnWednesday
             // 
             this.btnWednesday.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnWednesday.FlatAppearance.BorderSize = 0;
+            this.btnWednesday.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnWednesday.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnWednesday.Location = new System.Drawing.Point(266, 2);
-            this.btnWednesday.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnWednesday.Margin = new System.Windows.Forms.Padding(2);
             this.btnWednesday.Name = "btnWednesday";
             this.btnWednesday.Size = new System.Drawing.Size(98, 35);
             this.btnWednesday.TabIndex = 5;
@@ -207,8 +232,11 @@
             // btnSaturday
             // 
             this.btnSaturday.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.btnSaturday.FlatAppearance.BorderSize = 0;
+            this.btnSaturday.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSaturday.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSaturday.Location = new System.Drawing.Point(572, 2);
-            this.btnSaturday.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSaturday.Margin = new System.Windows.Forms.Padding(2);
             this.btnSaturday.Name = "btnSaturday";
             this.btnSaturday.Size = new System.Drawing.Size(98, 35);
             this.btnSaturday.TabIndex = 4;
@@ -218,8 +246,11 @@
             // btnSunday
             // 
             this.btnSunday.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.btnSunday.FlatAppearance.BorderSize = 0;
+            this.btnSunday.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSunday.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSunday.Location = new System.Drawing.Point(674, 2);
-            this.btnSunday.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSunday.Margin = new System.Windows.Forms.Padding(2);
             this.btnSunday.Name = "btnSunday";
             this.btnSunday.Size = new System.Drawing.Size(98, 35);
             this.btnSunday.TabIndex = 3;
@@ -229,9 +260,12 @@
             // btnMonday
             // 
             this.btnMonday.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnMonday.FlatAppearance.BorderSize = 0;
+            this.btnMonday.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMonday.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMonday.ForeColor = System.Drawing.Color.Black;
             this.btnMonday.Location = new System.Drawing.Point(62, 2);
-            this.btnMonday.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnMonday.Margin = new System.Windows.Forms.Padding(2);
             this.btnMonday.Name = "btnMonday";
             this.btnMonday.Size = new System.Drawing.Size(98, 35);
             this.btnMonday.TabIndex = 2;
@@ -242,56 +276,20 @@
             // pnlMatrix
             // 
             this.pnlMatrix.Location = new System.Drawing.Point(64, 46);
-            this.pnlMatrix.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlMatrix.Margin = new System.Windows.Forms.Padding(2);
             this.pnlMatrix.Name = "pnlMatrix";
             this.pnlMatrix.Size = new System.Drawing.Size(709, 340);
             this.pnlMatrix.TabIndex = 1;
             this.pnlMatrix.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
             // 
-            // nmNotify
-            // 
-            this.nmNotify.Enabled = false;
-            this.nmNotify.Location = new System.Drawing.Point(56, 7);
-            this.nmNotify.Margin = new System.Windows.Forms.Padding(2);
-            this.nmNotify.Maximum = new decimal(new int[] {
-            3600,
-            0,
-            0,
-            0});
-            this.nmNotify.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.nmNotify.Name = "nmNotify";
-            this.nmNotify.Size = new System.Drawing.Size(46, 20);
-            this.nmNotify.TabIndex = 1;
-            this.nmNotify.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.nmNotify.ValueChanged += new System.EventHandler(this.nmNotify_ValueChanged);
-            // 
-            // ckbNotify
-            // 
-            this.ckbNotify.AutoSize = true;
-            this.ckbNotify.Location = new System.Drawing.Point(2, 8);
-            this.ckbNotify.Margin = new System.Windows.Forms.Padding(2);
-            this.ckbNotify.Name = "ckbNotify";
-            this.ckbNotify.Size = new System.Drawing.Size(53, 17);
-            this.ckbNotify.TabIndex = 0;
-            this.ckbNotify.Text = "Notify";
-            this.ckbNotify.UseVisualStyleBackColor = true;
-            this.ckbNotify.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
-            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(851, 496);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form2";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Calendar";
@@ -299,10 +297,8 @@
             this.panel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
-            this.panel6.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.nmNotify)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -326,8 +322,6 @@
         private System.Windows.Forms.Button btnMonday;
         private System.Windows.Forms.Button btnThursday;
         private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.NumericUpDown nmNotify;
-        private System.Windows.Forms.CheckBox ckbNotify;
     }
 }
 

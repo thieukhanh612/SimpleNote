@@ -396,7 +396,7 @@ namespace SimpleNote
 
         private void helpToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Simple note by group 11.Contact to gmail:abc@gmail.com", "Help", MessageBoxButtons.OK, MessageBoxIcon.Question);
+            MessageBox.Show("Simple note by group 11.Contact to gmail:abc@gmail.com", "About", MessageBoxButtons.OK, MessageBoxIcon.Question);
         }
 
         private void newNoteToolStripMenuItem_Click(object sender, EventArgs e)
@@ -507,9 +507,7 @@ namespace SimpleNote
 
         private void saveToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            StreamWriter write = new StreamWriter(txtNoteContent.Text.Trim());
-            write.WriteLine(txtNoteContent.Text);
-            write.Close();
+           ;
         }
 
         private void saveAsToolStripMenuItem_Click(object sender, EventArgs e)
@@ -538,7 +536,7 @@ namespace SimpleNote
             }
             else
             {
-                MessageBox.Show("You don't save");
+                
             }
         }
         //exit
@@ -561,7 +559,7 @@ namespace SimpleNote
             //txtNoteContent.BackColor= textColorToolStripMenuItem.BackColor;
          if(colorDialog1.ShowDialog()==DialogResult.OK)
             {
-               txtNoteContent.BackColor = colorDialog1.Color;
+               txtNoteContent.ForeColor = colorDialog1.Color;
             }
         
         }
