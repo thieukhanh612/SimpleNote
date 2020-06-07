@@ -1,0 +1,79 @@
+D:\C#\SimpleNote\SimpleNote\SimpleNote\bin\Debug\SimpleNote.exe.config
+D:\C#\SimpleNote\SimpleNote\SimpleNote\bin\Debug\SimpleNote.exe
+D:\C#\SimpleNote\SimpleNote\SimpleNote\bin\Debug\SimpleNote.pdb
+D:\C#\SimpleNote\SimpleNote\SimpleNote\obj\Debug\SimpleNote.csprojAssemblyReference.cache
+D:\C#\SimpleNote\SimpleNote\SimpleNote\obj\Debug\SimpleNote.Form1.resources
+D:\C#\SimpleNote\SimpleNote\SimpleNote\obj\Debug\SimpleNote.Properties.Resources.resources
+D:\C#\SimpleNote\SimpleNote\SimpleNote\obj\Debug\SimpleNote.csproj.GenerateResource.cache
+D:\C#\SimpleNote\SimpleNote\SimpleNote\obj\Debug\SimpleNote.csproj.CoreCompileInputs.cache
+D:\C#\SimpleNote\SimpleNote\SimpleNote\obj\Debug\SimpleNote.exe
+D:\C#\SimpleNote\SimpleNote\SimpleNote\obj\Debug\SimpleNote.pdb
+D:\C#\SimpleNote\SimpleNote\SimpleNote\obj\Debug\SimpleNote.FrmInfo.resources
+D:\C#\SimpleNote\SimpleNote\SimpleNote\obj\Debug\SimpleNote.FrmRemind.resources
+C:\Users\ThinkKING\Downloads\SimpleNote\SimpleNote\SimpleNote\bin\Debug\SimpleNote.exe.config
+C:\Users\ThinkKING\Downloads\SimpleNote\SimpleNote\SimpleNote\bin\Debug\SimpleNote.exe
+C:\Users\ThinkKING\Downloads\SimpleNote\SimpleNote\SimpleNote\bin\Debug\SimpleNote.pdb
+C:\Users\ThinkKING\Downloads\SimpleNote\SimpleNote\SimpleNote\obj\Debug\SimpleNote.csprojAssemblyReference.cache
+C:\Users\ThinkKING\Downloads\SimpleNote\SimpleNote\SimpleNote\obj\Debug\SimpleNote.Form1.resources
+C:\Users\ThinkKING\Downloads\SimpleNote\SimpleNote\SimpleNote\obj\Debug\SimpleNote.FrmInfo.resources
+C:\Users\ThinkKING\Downloads\SimpleNote\SimpleNote\SimpleNote\obj\Debug\SimpleNote.FrmRemind.resources
+C:\Users\ThinkKING\Downloads\SimpleNote\SimpleNote\SimpleNote\obj\Debug\SimpleNote.Properties.Resources.resources
+C:\Users\ThinkKING\Downloads\SimpleNote\SimpleNote\SimpleNote\obj\Debug\SimpleNote.csproj.GenerateResource.cache
+C:\Users\ThinkKING\Downloads\SimpleNote\SimpleNote\SimpleNote\obj\Debug\SimpleNote.csproj.CoreCompileInputs.cache
+C:\Users\ThinkKING\Downloads\SimpleNote\SimpleNote\SimpleNote\obj\Debug\SimpleNote.exe
+C:\Users\ThinkKING\Downloads\SimpleNote\SimpleNote\SimpleNote\obj\Debug\SimpleNote.pdb
+C:\Users\PC\Desktop\New folder\New folder\SimpleNote - Copy\SimpleNote\SimpleNote\bin\Debug\SimpleNote.exe.config
+C:\Users\PC\Desktop\New folder\New folder\SimpleNote - Copy\SimpleNote\SimpleNote\bin\Debug\SimpleNote.exe
+C:\Users\PC\Desktop\New folder\New folder\SimpleNote - Copy\SimpleNote\SimpleNote\bin\Debug\SimpleNote.pdb
+C:\Users\PC\Desktop\New folder\New folder\SimpleNote - Copy\SimpleNote\SimpleNote\obj\Debug\SimpleNote.csprojAssemblyReference.cache
+C:\Users\PC\Desktop\New folder\New folder\SimpleNote - Copy\SimpleNote\SimpleNote\obj\Debug\SimpleNote.Form1.resources
+C:\Users\PC\Desktop\New folder\New folder\SimpleNote - Copy\SimpleNote\SimpleNote\obj\Debug\SimpleNote.FrmInfo.resources
+C:\Users\PC\Desktop\New folder\New folder\SimpleNote - Copy\SimpleNote\SimpleNote\obj\Debug\SimpleNote.FrmRemind.resources
+C:\Users\PC\Desktop\New folder\New folder\SimpleNote - Copy\SimpleNote\SimpleNote\obj\Debug\SimpleNote.Properties.Resources.resources
+C:\Users\PC\Desktop\New folder\New folder\SimpleNote - Copy\SimpleNote\SimpleNote\obj\Debug\SimpleNote.csproj.GenerateResource.cache
+C:\Users\PC\Desktop\New folder\New folder\SimpleNote - Copy\SimpleNote\SimpleNote\obj\Debug\SimpleNote.exe
+C:\Users\PC\Desktop\New folder\New folder\SimpleNote - Copy\SimpleNote\SimpleNote\obj\Debug\SimpleNote.pdb
+C:\Users\PC\Desktop\ProjectWindow\SimpleNote - Copy\SimpleNote\SimpleNote\bin\Debug\SimpleNote.exe.config
+C:\Users\PC\Desktop\ProjectWindow\SimpleNote - Copy\SimpleNote\SimpleNote\bin\Debug\SimpleNote.exe
+C:\Users\PC\Desktop\ProjectWindow\SimpleNote - Copy\SimpleNote\SimpleNote\bin\Debug\SimpleNote.pdb
+C:\Users\PC\Desktop\ProjectWindow\SimpleNote - Copy\SimpleNote\SimpleNote\obj\Debug\SimpleNote.csprojAssemblyReference.cache
+C:\Users\PC\Desktop\ProjectWindow\SimpleNote - Copy\SimpleNote\SimpleNote\obj\Debug\SimpleNote.Ajob.resources
+C:\Users\PC\Desktop\ProjectWindow\SimpleNote - Copy\SimpleNote\SimpleNote\obj\Debug\SimpleNote.DailyPlan.resources
+C:\Users\PC\Desktop\ProjectWindow\SimpleNote - Copy\SimpleNote\SimpleNote\obj\Debug\SimpleNote.Form1.resources
+C:\Users\PC\Desktop\ProjectWindow\SimpleNote - Copy\SimpleNote\SimpleNote\obj\Debug\SimpleNote.Form2.resources
+C:\Users\PC\Desktop\ProjectWindow\SimpleNote - Copy\SimpleNote\SimpleNote\obj\Debug\SimpleNote.FrmInfo.resources
+C:\Users\PC\Desktop\ProjectWindow\SimpleNote - Copy\SimpleNote\SimpleNote\obj\Debug\SimpleNote.FrmRemind.resources
+C:\Users\PC\Desktop\ProjectWindow\SimpleNote - Copy\SimpleNote\SimpleNote\obj\Debug\SimpleNote.Properties.Resources.resources
+C:\Users\PC\Desktop\ProjectWindow\SimpleNote - Copy\SimpleNote\SimpleNote\obj\Debug\SimpleNote.csproj.GenerateResource.cache
+C:\Users\PC\Desktop\ProjectWindow\SimpleNote - Copy\SimpleNote\SimpleNote\obj\Debug\SimpleNote.exe
+C:\Users\PC\Desktop\ProjectWindow\SimpleNote - Copy\SimpleNote\SimpleNote\obj\Debug\SimpleNote.pdb
+C:\Users\HCM\Desktop\ProjectWindow\SimpleNote - Copy\SimpleNote\SimpleNote\bin\Debug\SimpleNote.exe.config
+C:\Users\HCM\Desktop\ProjectWindow\SimpleNote - Copy\SimpleNote\SimpleNote\bin\Debug\SimpleNote.exe
+C:\Users\HCM\Desktop\ProjectWindow\SimpleNote - Copy\SimpleNote\SimpleNote\bin\Debug\SimpleNote.pdb
+C:\Users\HCM\Desktop\ProjectWindow\SimpleNote - Copy\SimpleNote\SimpleNote\obj\Debug\SimpleNote.csprojAssemblyReference.cache
+C:\Users\HCM\Desktop\ProjectWindow\SimpleNote - Copy\SimpleNote\SimpleNote\obj\Debug\SimpleNote.Ajob.resources
+C:\Users\HCM\Desktop\ProjectWindow\SimpleNote - Copy\SimpleNote\SimpleNote\obj\Debug\SimpleNote.DailyPlan.resources
+C:\Users\HCM\Desktop\ProjectWindow\SimpleNote - Copy\SimpleNote\SimpleNote\obj\Debug\SimpleNote.Form1.resources
+C:\Users\HCM\Desktop\ProjectWindow\SimpleNote - Copy\SimpleNote\SimpleNote\obj\Debug\SimpleNote.Form2.resources
+C:\Users\HCM\Desktop\ProjectWindow\SimpleNote - Copy\SimpleNote\SimpleNote\obj\Debug\SimpleNote.FrmInfo.resources
+C:\Users\HCM\Desktop\ProjectWindow\SimpleNote - Copy\SimpleNote\SimpleNote\obj\Debug\SimpleNote.FrmRemind.resources
+C:\Users\HCM\Desktop\ProjectWindow\SimpleNote - Copy\SimpleNote\SimpleNote\obj\Debug\SimpleNote.Properties.Resources.resources
+C:\Users\HCM\Desktop\ProjectWindow\SimpleNote - Copy\SimpleNote\SimpleNote\obj\Debug\SimpleNote.csproj.GenerateResource.cache
+C:\Users\HCM\Desktop\ProjectWindow\SimpleNote - Copy\SimpleNote\SimpleNote\obj\Debug\SimpleNote.csproj.CoreCompileInputs.cache
+C:\Users\HCM\Desktop\ProjectWindow\SimpleNote - Copy\SimpleNote\SimpleNote\obj\Debug\SimpleNote.exe
+C:\Users\HCM\Desktop\ProjectWindow\SimpleNote - Copy\SimpleNote\SimpleNote\obj\Debug\SimpleNote.pdb
+C:\Users\HCM\Desktop\SimpleNote2\SimpleNote\SimpleNote\bin\Debug\SimpleNote.exe.config
+C:\Users\HCM\Desktop\SimpleNote2\SimpleNote\SimpleNote\bin\Debug\SimpleNote.exe
+C:\Users\HCM\Desktop\SimpleNote2\SimpleNote\SimpleNote\bin\Debug\SimpleNote.pdb
+C:\Users\HCM\Desktop\SimpleNote2\SimpleNote\SimpleNote\obj\Debug\SimpleNote.csprojAssemblyReference.cache
+C:\Users\HCM\Desktop\SimpleNote2\SimpleNote\SimpleNote\obj\Debug\SimpleNote.Ajob.resources
+C:\Users\HCM\Desktop\SimpleNote2\SimpleNote\SimpleNote\obj\Debug\SimpleNote.DailyPlan.resources
+C:\Users\HCM\Desktop\SimpleNote2\SimpleNote\SimpleNote\obj\Debug\SimpleNote.Form1.resources
+C:\Users\HCM\Desktop\SimpleNote2\SimpleNote\SimpleNote\obj\Debug\SimpleNote.Form2.resources
+C:\Users\HCM\Desktop\SimpleNote2\SimpleNote\SimpleNote\obj\Debug\SimpleNote.FrmInfo.resources
+C:\Users\HCM\Desktop\SimpleNote2\SimpleNote\SimpleNote\obj\Debug\SimpleNote.FrmRemind.resources
+C:\Users\HCM\Desktop\SimpleNote2\SimpleNote\SimpleNote\obj\Debug\SimpleNote.Properties.Resources.resources
+C:\Users\HCM\Desktop\SimpleNote2\SimpleNote\SimpleNote\obj\Debug\SimpleNote.csproj.GenerateResource.cache
+C:\Users\HCM\Desktop\SimpleNote2\SimpleNote\SimpleNote\obj\Debug\SimpleNote.csproj.CoreCompileInputs.cache
+C:\Users\HCM\Desktop\SimpleNote2\SimpleNote\SimpleNote\obj\Debug\SimpleNote.exe
+C:\Users\HCM\Desktop\SimpleNote2\SimpleNote\SimpleNote\obj\Debug\SimpleNote.pdb
