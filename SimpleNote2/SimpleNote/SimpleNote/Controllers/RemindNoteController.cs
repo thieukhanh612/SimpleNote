@@ -14,7 +14,7 @@ namespace SimpleNote.Controllers
         claData data = new claData();
         public Boolean InsertRemindNote(int NoteID, DateTime NoteDate, string NoteStatus)
         {
-            Boolean check = data.excedata("INSERT INTO RemindNote VALUES(" + NoteID + ",'" + NoteDate + "','" + NoteStatus + "');");
+            Boolean check = data.excedata("INSERT INTO RemindNote VALUES(" + NoteID + ",'" + NoteDate.ToString("dd / MM / yyyy HH: mm:ss") + "','" + NoteStatus + "');");
             return check;
         }
         public Boolean UpdateRemindNote(int NoteID, DateTime NoteDate, string NoteStatus)

@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using SimpleNote.Models;
 using SimpleNote.Controllers;
+using SimpleNote.Views;
 
 namespace SimpleNote
 {
@@ -19,13 +20,17 @@ namespace SimpleNote
         int ID;
         claData data = new claData();
         BindingSource bs = new BindingSource();
-        FrmInfo FormInfo;
-        FrmRemind FormRemind;
+        FrmInfo FormInfo ;
+        FrmRemind FormRemind ;
         NoteController noteController = new NoteController();
         TrashNoteController trashNoteController = new TrashNoteController();
         RemindNoteController remindNoteController = new RemindNoteController();
-        Form2 FrmCarlendar;
+        Form2 FrmCarlendar=new Form2();
         int AppTime = 0;
+        string cache = string.Empty;
+        string oldcache = string.Empty;
+        FlowLayoutPanel fPanel = new FlowLayoutPanel();
+        
         public Form1()
         {
             InitializeComponent();
@@ -35,14 +40,35 @@ namespace SimpleNote
             timer.Enabled = true;
             int CountRemindNote = remindNoteController.CountRemindNotes(DateTime.Now);
             Notify.ShowBalloonTip(Cons.notifyTimeOut, "Today Plan", string.Format("You have {0} job today", CountRemindNote), ToolTipIcon.Info);
-
+            fPanel.Width = splitContainer8.Panel2.Width;
+            fPanel.Height = splitContainer8.Panel2.Height;
+            splitContainer8.Panel2.Controls.Add(fPanel);
+            fPanel.AutoScroll = true;
+            getJobs();
         }
         OpenFileDialog open;
         SaveFileDialog save;
-
+        void getJobs()
+        {
+            DataTable dt = noteController.getNoteRemind();
+            foreach(DataRow row in dt.Rows)
+            {
+                NextJob nextJob = new NextJob(row);
+                fPanel.Controls.Add(nextJob);
+            }
+        }
+        public static StringBuilder Cache(RichTextBox BoxCache)
+        {
+            StringBuilder cache = new StringBuilder();
+            cache.Append(BoxCache.Text);
+            return cache;
+        }
         private void txtNoteContent_TextChanged(object sender, EventArgs e)
         {
             this.tsNote.Visible = true;
+            oldcache = cache;
+            cache = Cache(txtNoteContent).ToString();
+            
             if (this.btnAllNote.BackColor == Color.SkyBlue)
             {
                 this.toolStripBtnDeleteForever.Visible = false;
@@ -97,6 +123,7 @@ namespace SimpleNote
             if (DGVNoteName.Rows.Count != 0)
             {
                 this.txtNoteContent.Visible = true;
+                this.txtTag.Visible = true;
                 this.tsNote.Visible = true;
                 if (this.btnAllNote.BackColor == Color.SkyBlue)
                 {
@@ -124,7 +151,7 @@ namespace SimpleNote
         private void toolStripbtnAdd_Click(object sender, EventArgs e)
         {
             this.txtNoteContent.Visible = true;
-
+            this.txtTag.Visible = true;
             this.tsNote.Visible = true;
             this.toolStripBtnDeleteForever.Visible = false;
             this.toolStripBtnRestore.Visible = false;
@@ -146,6 +173,7 @@ namespace SimpleNote
         private void DGVNoteName_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             this.txtNoteContent.Visible = true;
+            this.txtTag.Visible = true;
             this.tsNote.Visible = true;
             if (this.btnAllNote.BackColor == Color.SkyBlue)
             {
@@ -170,12 +198,8 @@ namespace SimpleNote
 
         private void toolStripBtnInfo_Click(object sender, EventArgs e)
         {
-
-            if (FormInfo == null || FormInfo.IsDisposed)
-            {
-                FormInfo = new FrmInfo((int)this.DGVNoteName.CurrentRow.Cells[0].Value);
-                FormInfo.Show();
-            }
+            FormInfo = new FrmInfo((int)this.DGVNoteName.CurrentRow.Cells[0].Value);
+            FormInfo.ShowDialog();
 
         }
 
@@ -191,10 +215,12 @@ namespace SimpleNote
                 bs.DataSource = dt;
                 DGVNoteName.DataSource = bs;
                 this.txtNoteContent.Visible = true;
+                this.txtTag.Visible = true;
                 this.tsNote.Visible = true;
                 if (DGVNoteName.Rows.Count == 0)
                 {
                     this.txtNoteContent.Visible = false;
+                    this.txtTag.Visible = false;
                     this.tsNote.Visible = false;
                     return;
                 }
@@ -210,18 +236,27 @@ namespace SimpleNote
 
         private void toolStripbtnRemind_Click(object sender, EventArgs e)
         {
-            if (FormRemind == null || FormRemind.IsDisposed)
-            {
-                FormRemind = new FrmRemind((int)this.DGVNoteName.CurrentRow.Cells[0].Value);
-                FormRemind.Show();
-            }
+            FormRemind = new FrmRemind((int)this.DGVNoteName.CurrentRow.Cells[0].Value);
+            FormRemind.FormClosed += FormRemind_FormClosed1;
+            FormRemind.ShowDialog();
+              
         }
+
+        private void FormRemind_FormClosed1(object sender, FormClosedEventArgs e)
+        {
+            fPanel.Controls.Clear();
+            getJobs();
+        }
+
+     
 
         private void DGVNoteName_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
             Boolean check = noteController.UpdateNoteName(DGVNoteName.CurrentRow.Cells[1].Value.ToString(), (int)this.DGVNoteName.CurrentRow.Cells[0].Value );
             if (check == false)
                 MessageBox.Show("Error");
+            fPanel.Controls.Clear();
+            getJobs();
         }
 
         private void btnTrashNote_Click(object sender, EventArgs e)
@@ -232,11 +267,13 @@ namespace SimpleNote
             this.toolStripbtnAdd.Visible = false;
             DataTable dt = trashNoteController.getTrashNotes();
             this.txtNoteContent.ReadOnly = true;
+            this.txtTag.ReadOnly = true;
             bs.DataSource = dt;
             this.DGVNoteName.DataSource = bs;
             if (DGVNoteName.Rows.Count != 0)
             {
                 this.txtNoteContent.Visible = true;
+                this.txtTag.Visible = true;
                 this.tsNote.Visible = true;
                 if (this.btnAllNote.BackColor == Color.SkyBlue)
                 {
@@ -261,6 +298,7 @@ namespace SimpleNote
             else
             {
                 this.txtNoteContent.Visible = false;
+                this.txtTag.Visible = false;
                 this.tsNote.Visible = false;
             }
         }
@@ -273,11 +311,13 @@ namespace SimpleNote
             this.toolStripbtnAdd.Visible = true;
             DataTable dt = noteController.getNotes();
             this.txtNoteContent.ReadOnly = false;
+            this.txtTag.ReadOnly = false;
             bs.DataSource = dt;
             DGVNoteName.DataSource = bs;
             if (DGVNoteName.Rows.Count != 0)
             {
                 this.txtNoteContent.Visible = true;
+                this.txtTag.Visible = true;
                 this.tsNote.Visible = true;
                 if (this.btnAllNote.BackColor == Color.SkyBlue)
                 {
@@ -302,6 +342,7 @@ namespace SimpleNote
             else
             {
                 this.txtNoteContent.Visible = false;
+                this.txtTag.Visible = false;
                 this.tsNote.Visible = false;
             }
         }
@@ -322,6 +363,7 @@ namespace SimpleNote
                 if (DGVNoteName.Rows.Count == 0)
                 {
                     this.txtNoteContent.Visible = false;
+                    this.txtTag.Visible = false;
                     this.tsNote.Visible = false;
                     return;
                 }
@@ -345,6 +387,7 @@ namespace SimpleNote
                 if (DGVNoteName.Rows.Count == 0)
                 {
                     this.txtNoteContent.Visible = false;
+                    this.txtTag.Visible = false;
                     this.tsNote.Visible = false;
                     return;
                 }
@@ -396,7 +439,12 @@ namespace SimpleNote
 
         private void helpToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Simple note by group 11.Contact to gmail:abc@gmail.com", "About", MessageBoxButtons.OK, MessageBoxIcon.Question);
+            AboutBox1 about = new AboutBox1();
+            about.ShowDialog();
+           /* if(about ==null || about.IsDisposed())
+            {
+                about.Show();
+            }*/
         }
 
         private void newNoteToolStripMenuItem_Click(object sender, EventArgs e)
@@ -406,7 +454,8 @@ namespace SimpleNote
 
         private void undoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            txtNoteContent.Undo();
+            txtNoteContent.Text = oldcache;
+            txtNoteContent.SelectionStart = txtNoteContent.Text.Length;
             undoToolStripMenuItem.Enabled = false;
             redoToolStripMenuItem.Enabled = true;
 
@@ -419,7 +468,7 @@ namespace SimpleNote
 
         private void redoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            txtNoteContent.Redo();
+            txtNoteContent.Text = oldcache;       
             redoToolStripMenuItem.Enabled = false;
             undoToolStripMenuItem.Enabled = true;
 
@@ -566,12 +615,8 @@ namespace SimpleNote
 
         private void btnCalendar_Click(object sender, EventArgs e)
         {
-           
-            if (FrmCarlendar == null || FrmCarlendar.IsDisposed)
-            {
-                FrmCarlendar = new Form2();
-                FrmCarlendar.Show();
-            }
+
+            FrmCarlendar.ShowDialog();
         }
 
         private void tmNotify_Tick(object sender, EventArgs e)
@@ -581,6 +626,26 @@ namespace SimpleNote
                 return;
             int CountRemindNote = remindNoteController.CountRemindNotes(DateTime.Now);          
             Notify.ShowBalloonTip(Cons.notifyTimeOut, "Today Plan", string.Format("You have {0} job today", CountRemindNote), ToolTipIcon.Info);
+        }
+
+        private void txtTag_Enter(object sender, EventArgs e)
+        {
+            if(this.txtTag.Text=="Add a tag...")
+            {
+                this.txtTag.Text = "";
+                this.txtTag.ForeColor = Color.Black;
+
+            }
+        }
+
+        private void txtTag_Leave(object sender, EventArgs e)
+        {
+            if (this.txtTag.Text == "")
+            {
+                this.txtTag.Text = "Add a tag...";
+                this.txtTag.ForeColor = SystemColors.ControlDark ;
+
+            }
         }
     }
 }

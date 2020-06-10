@@ -57,6 +57,11 @@ namespace SimpleNote.Controllers
             Boolean check = data.excedata("DELETE FROM Note WHERE NoteId=" + IDNote + ";");
             return check;
         }
+        public DataTable getNoteRemind()
+        {
+            DataTable dt = data.readdata("SELECT Note.NoteName, RemindNote.NoteDateReminded, RemindNote.NoteStatus FROM(Note join RemindNote on Note.NoteID = RemindNote.NoteId) ORDER BY RemindNote.NoteDateReminded;");
+            return dt;
+        }
 
     }
 

@@ -77,3 +77,5 @@ C:\Users\HCM\Desktop\SimpleNote2\SimpleNote\SimpleNote\obj\Debug\SimpleNote.cspr
 C:\Users\HCM\Desktop\SimpleNote2\SimpleNote\SimpleNote\obj\Debug\SimpleNote.csproj.CoreCompileInputs.cache
 C:\Users\HCM\Desktop\SimpleNote2\SimpleNote\SimpleNote\obj\Debug\SimpleNote.exe
 C:\Users\HCM\Desktop\SimpleNote2\SimpleNote\SimpleNote\obj\Debug\SimpleNote.pdb
+C:\Users\HCM\Desktop\SimpleNote2\SimpleNote\SimpleNote\obj\Debug\SimpleNote.Views.AboutBox1.resources
+C:\Users\HCM\Desktop\SimpleNote2\SimpleNote\SimpleNote\obj\Debug\SimpleNote.Views.NextJob.resources
