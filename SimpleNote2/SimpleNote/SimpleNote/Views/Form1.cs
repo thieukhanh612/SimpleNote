@@ -50,7 +50,7 @@ namespace SimpleNote
         SaveFileDialog save;
         void getJobs()
         {
-            DataTable dt = noteController.getNoteRemind();
+            DataTable dt = remindNoteController.getNotes();
             foreach(DataRow row in dt.Rows)
             {
                 NextJob nextJob = new NextJob(row);
@@ -164,6 +164,8 @@ namespace SimpleNote
             dt = noteController.getNotes( (int)DGVNoteName.CurrentRow.Cells[0].Value );
             this.txtNoteContent.DataBindings.Add("Text", dt, "NoteContent");
             this.txtNoteContent.DataBindings.Clear();
+            this.DGVNoteName.ClearSelection();
+            this.DGVNoteName.Rows[0].Selected = true;
 
 
 
@@ -245,6 +247,7 @@ namespace SimpleNote
         private void FormRemind_FormClosed1(object sender, FormClosedEventArgs e)
         {
             fPanel.Controls.Clear();
+            fPanel.AutoScroll = true;
             getJobs();
         }
 
@@ -265,7 +268,7 @@ namespace SimpleNote
             this.btnAllNote.BackColor = Color.White;
             this.btnTrashNote.BackColor = Color.SkyBlue;
             this.toolStripbtnAdd.Visible = false;
-            DataTable dt = trashNoteController.getTrashNotes();
+            DataTable dt = trashNoteController.getNotes();
             this.txtNoteContent.ReadOnly = true;
             this.txtTag.ReadOnly = true;
             bs.DataSource = dt;
@@ -351,13 +354,13 @@ namespace SimpleNote
         {
             if (DGVNoteName.Rows.Count != 0)
             {
-                Boolean check = trashNoteController.DeleteTrashNote((int) this.DGVNoteName.CurrentRow.Cells[0].Value );
+                Boolean check = trashNoteController.DeleteNote((int) this.DGVNoteName.CurrentRow.Cells[0].Value );
                 if (check == false) MessageBox.Show("Error");
                 check = data.excedata("DELETE FROM RemindNote WHERE NoteId=" + this.DGVNoteName.CurrentRow.Cells[0].Value + ";");
                 if (check == false) MessageBox.Show("Error");
                 check = noteController.DeleteNote((int) this.DGVNoteName.CurrentRow.Cells[0].Value );
                 if (check == false) MessageBox.Show("Error");
-                DataTable dt = trashNoteController.getTrashNotes();
+                DataTable dt = trashNoteController.getNotes();
                 bs.DataSource = dt;
                 this.DGVNoteName.DataSource = bs;
                 if (DGVNoteName.Rows.Count == 0)
@@ -379,9 +382,9 @@ namespace SimpleNote
         {
             if (DGVNoteName.Rows.Count != 0)
             {
-                Boolean check = trashNoteController.DeleteTrashNote((int) this.DGVNoteName.CurrentRow.Cells[0].Value );
+                Boolean check = trashNoteController.DeleteNote((int) this.DGVNoteName.CurrentRow.Cells[0].Value );
                 if (check == false) MessageBox.Show("Error");
-                DataTable dt = trashNoteController.getTrashNotes();
+                DataTable dt = trashNoteController.getNotes();
                 bs.DataSource = dt;
                 this.DGVNoteName.DataSource = bs;
                 if (DGVNoteName.Rows.Count == 0)
@@ -418,13 +421,13 @@ namespace SimpleNote
             {
                 if (toolStripTextBox1.Text.Length > 0)
                 {
-                    DataTable dt = trashNoteController.getTrashNotes( toolStripTextBox1.Text );
+                    DataTable dt = trashNoteController.getNotes( toolStripTextBox1.Text );
                     bs.DataSource = dt;
                     this.DGVNoteName.DataSource = bs;
                 }
                 else
                 {
-                    DataTable dt = trashNoteController.getTrashNotes();
+                    DataTable dt = trashNoteController.getNotes();
                     bs.DataSource = dt;
                     DGVNoteName.DataSource = bs;
                 }
@@ -512,7 +515,8 @@ namespace SimpleNote
 
         private void italicToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            txtNoteContent.SelectionFont = new Font(txtNoteContent.Font, FontStyle.Italic);
+            txtNoteContent.SelectionFont = new System.Drawing.Font("Microsoft Sans Serif", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic|System.Drawing.FontStyle.Strikeout))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+          
         }
 
         private void underlineToolStripMenuItem_Click(object sender, EventArgs e)
@@ -523,6 +527,7 @@ namespace SimpleNote
         private void strikeThroughtToolStripMenuItem_Click(object sender, EventArgs e)
         {
             txtNoteContent.SelectionFont = new Font(txtNoteContent.Font, FontStyle.Strikeout);
+
         }
 
         private void normalToolStripMenuItem_Click(object sender, EventArgs e)
@@ -532,10 +537,9 @@ namespace SimpleNote
 
         private void toolStripStatusLabel1_Click(object sender, EventArgs e)
         {
-           
-        }
 
-        private void timer1_Tick(object sender, EventArgs e)
+        }
+         private void timer1_Tick(object sender, EventArgs e)
         {
             string s = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
             toolStripStatusLabel1.Text = s;
@@ -646,6 +650,31 @@ namespace SimpleNote
                 this.txtTag.ForeColor = SystemColors.ControlDark ;
 
             }
+        }
+
+        private void newNoteToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            this.txtNoteContent.Visible = true;
+            this.txtTag.Visible = true;
+            this.tsNote.Visible = true;
+            this.toolStripBtnDeleteForever.Visible = false;
+            this.toolStripBtnRestore.Visible = false;
+            DateTime dtime = DateTime.Now;
+            Boolean check = noteController.InsertNote(dtime);
+            if (check == false) MessageBox.Show("That bai");
+            DataTable dt = noteController.getNotes();
+            bs.DataSource = dt;
+            dt.Dispose();
+            dt = noteController.getNotes((int)DGVNoteName.CurrentRow.Cells[0].Value);
+            this.txtNoteContent.DataBindings.Add("Text", dt, "NoteContent");
+            this.txtNoteContent.DataBindings.Clear();
+            this.DGVNoteName.ClearSelection();
+            this.DGVNoteName.Rows[0].Selected = true;
+        }
+
+        private void txtTag_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

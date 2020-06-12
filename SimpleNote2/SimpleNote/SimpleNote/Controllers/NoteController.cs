@@ -12,7 +12,7 @@ namespace SimpleNote.Controllers
     class NoteController
     {
         private claData data = new claData();
-        public DataTable getNotes()
+        public virtual DataTable getNotes()
         {
             DataTable dt = data.readdata("SELECT Note.Noteid, Note.NoteName FROM NOTE WHERE NoteId NOT IN (SELECT Note.NoteId  FROM Note, TrashNote WHERE Note.NoteId = TrashNote.NoteId) ORDER BY NoteId DESC; ");
             return dt;
@@ -32,7 +32,7 @@ namespace SimpleNote.Controllers
             DataTable dt = data.readdata("SELECT NoteContent FROM Note WHERE NoteId=" + IDNote + ";");
             return dt;
         }
-        public DataTable getNotes(string SearchNote)
+        public virtual DataTable getNotes(string SearchNote)
         {
             DataTable dt = data.readdata("SELECT NoteName FROM Note WHERE CHARINDEX('" + SearchNote + "',NoteName) <>0 AND NoteId NOT IN (SELECT NoteId FROM TrashNote) ORDER BY NoteId DESC;");
             return dt;
@@ -52,16 +52,12 @@ namespace SimpleNote.Controllers
             Boolean check = data.excedata("INSERT INTO Note(NoteName,NoteDateCreated) VALUES('New Note....','" + NoteDateCreated + "');");
             return check;
         }
-        public Boolean DeleteNote(int IDNote)
+        public virtual Boolean DeleteNote(int IDNote)
         {
             Boolean check = data.excedata("DELETE FROM Note WHERE NoteId=" + IDNote + ";");
             return check;
         }
-        public DataTable getNoteRemind()
-        {
-            DataTable dt = data.readdata("SELECT Note.NoteName, RemindNote.NoteDateReminded, RemindNote.NoteStatus FROM(Note join RemindNote on Note.NoteID = RemindNote.NoteId) ORDER BY RemindNote.NoteDateReminded;");
-            return dt;
-        }
+      
 
     }
 

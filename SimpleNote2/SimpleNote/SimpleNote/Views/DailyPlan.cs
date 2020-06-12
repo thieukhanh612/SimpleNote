@@ -56,7 +56,7 @@ namespace SimpleNote
             Ajob uc = sender as Ajob;
             DataRow job = uc.Job;
             fPanel.Controls.Remove(uc);
-            remindNoteController.DeleteRemindNote((int)job[0]);
+            remindNoteController.DeleteNote((int)job[0]);
             
         }
 

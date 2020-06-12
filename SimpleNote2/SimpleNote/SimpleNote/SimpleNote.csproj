@@ -48,6 +48,7 @@
   <ItemGroup>
     <Compile Include="Controllers\NoteController.cs" />
     <Compile Include="Controllers\RemindNoteController.cs" />
+    <Compile Include="Controllers\TextController.cs" />
     <Compile Include="Controllers\TrashNoteController.cs" />
     <Compile Include="Views\AboutBox1.cs">
       <SubType>Form</SubType>
