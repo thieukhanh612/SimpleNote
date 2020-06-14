@@ -20,6 +20,7 @@ namespace SimpleNote.Views
         public NextJob(DataRow Note)
         {
             InitializeComponent();
+            this.Dock = DockStyle.Top;
             this.Note = Note;
             this.label1.Text = Note[0].ToString();
             this.label2.Text = ((DateTime)Note[1]).ToString("dd/MM/yyyy HH:mm");

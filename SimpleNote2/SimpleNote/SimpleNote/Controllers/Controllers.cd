@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="SimpleNote.Controllers.NoteController">
+    <Position X="6.75" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAEAAAgAAABAAARgAAIAAA=</HashCode>
+      <FileName>Controllers\NoteController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SimpleNote.Controllers.RemindNoteController">
+    <Position X="10.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEQAAAAAAAAAAAAAAAAAAAAEAAAgAAAAQAAQAAAIAAA=</HashCode>
+      <FileName>Controllers\RemindNoteController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SimpleNote.Controllers.TextController">
+    <Position X="6.5" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAA=</HashCode>
+      <FileName>Controllers\TextController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SimpleNote.Controllers.TrashNoteController">
+    <Position X="2.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAABAAAAAAAAAEAAAAAAAAAAAQAAAIAAA=</HashCode>
+      <FileName>Controllers\TrashNoteController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SimpleNote.Controllers.NoteTagController">
+    <Position X="6.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAQAAIIAAA=</HashCode>
+      <FileName>Controllers\NoteTagController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
