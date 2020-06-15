@@ -17,6 +17,11 @@ namespace SimpleNote.Controllers
             Boolean check = data.excedata("UPDATE Note SET NoteContentStyle='" + style.ToString() + "' WHERE NoteId=" + IDNote + ";");
             return check;
         }
+        public Boolean UpdateNoteContentColor(Color color, int IDNote)
+        {
+            Boolean check = data.excedata("UPDATE Note SET NoteContentColor ='" + color.Name.ToString() + "' WHERE NoteId=" + IDNote + ";") ;
+            return check;
+        }
         public FontStyle GetNoteContentFontStyle(int IDNote)
         {
             DataTable dt = data.readdata("SELECT NoteContentStyle FROM Note WHERE NoteId=" + IDNote + ";");
@@ -49,5 +54,16 @@ namespace SimpleNote.Controllers
             }
             return style;
         }
+        public Color GetNoteContentColor(int IDNote)
+        {
+            DataTable dt = data.readdata("SELECT NoteContentColor FROM NOTE WHERE NoteId=" + IDNote + ";");
+            Color color = new Color() ;
+            foreach(DataRow row in dt.Rows)
+            {
+                color = Color.FromName(row[0].ToString());
+            }
+            return color;
+        }
     }
+
 }

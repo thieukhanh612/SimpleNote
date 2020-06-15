@@ -100,6 +100,12 @@
     <Compile Include="Models\PlanItem.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\Frmhelp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Frmhelp.Designer.cs">
+      <DependentUpon>Frmhelp.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\NextJob.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -137,6 +143,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Views\Frmhelp.resx">
+      <DependentUpon>Frmhelp.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\NextJob.resx">
       <DependentUpon>NextJob.cs</DependentUpon>
     </EmbeddedResource>
@@ -228,6 +237,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Normal-Text-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Untitled.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

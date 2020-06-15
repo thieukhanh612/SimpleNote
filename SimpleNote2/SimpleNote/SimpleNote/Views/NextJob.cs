@@ -50,5 +50,13 @@ namespace SimpleNote.Views
                 this.label2.ForeColor = Color.Red;
             }
         }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            this.Dispose();
+            Boolean check = remindNoteController.UpdateRemindNote((int)Note[3], DateTime.Now, "DONE");
+            if (check == false)
+                MessageBox.Show("Error");
+        }
     }
 }

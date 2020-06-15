@@ -145,8 +145,8 @@
   <data name="Editing-Strikethrough-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Editing-Strikethrough-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="images" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\images.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Redo-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Redo-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Undo-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Undo-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -154,14 +154,20 @@
   <data name="save as" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\save as.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Redo-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Redo-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="94-940960_cartoon-pencil-and-paper-paper-and-pencil-sketch" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\94-940960_cartoon-pencil-and-paper-paper-and-pencil-sketch.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Normal-Text-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Normal-Text-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="open-file-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\open-file-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="94-940960_cartoon-pencil-and-paper-paper-and-pencil-sketch" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\94-940960_cartoon-pencil-and-paper-paper-and-pencil-sketch.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Actions-document-save-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Actions-document-save-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Untitled" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Untitled.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Actions-application-exit-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Actions-application-exit-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -184,13 +190,13 @@
   <data name="a" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\a.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Actions-document-save-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Actions-document-save-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="images" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\images.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Button-Close-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Button-Close-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Normal-Text-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Normal-Text-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="asdasdasd" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\asdasdasd.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

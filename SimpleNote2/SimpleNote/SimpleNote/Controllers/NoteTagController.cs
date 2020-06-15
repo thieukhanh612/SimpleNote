@@ -18,7 +18,12 @@ namespace SimpleNote.Controllers
         }
         public DataTable GetNoteTag()
         {
-            DataTable dt = data.readdata("SELECT DISTINCT NoteTag FROM Note");
+            DataTable dt = data.readdata("SELECT DISTINCT Note.NoteTag FROM NOTE WHERE NoteId NOT IN (SELECT Note.NoteId  FROM Note, TrashNote WHERE Note.NoteId = TrashNote.NoteId) AND Note.NoteTag<> 'NULL';");
+            return dt;
+        }
+        public DataTable GetNoteTag(int IDNote)
+        {
+            DataTable dt = data.readdata("SELECT Note.NoteTag FROM Note WHERE NoteId =" + IDNote + ";");
             return dt;
         }
         public override DataTable getNotes(string SearchNote)

@@ -113,6 +113,16 @@ namespace SimpleNote.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap asdasdasd {
+            get {
+                object obj = ResourceManager.GetObject("asdasdasd", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap b {
             get {
                 object obj = ResourceManager.GetObject("b", resourceCulture);
@@ -306,6 +316,16 @@ namespace SimpleNote.Properties {
         internal static System.Drawing.Bitmap Undo_icon {
             get {
                 object obj = ResourceManager.GetObject("Undo-icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Untitled {
+            get {
+                object obj = ResourceManager.GetObject("Untitled", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

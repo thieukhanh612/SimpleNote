@@ -26,10 +26,10 @@ namespace SimpleNote
         TrashNoteController trashNoteController = new TrashNoteController();
         RemindNoteController remindNoteController = new RemindNoteController();
         TextController textController = new TextController();
+        NoteTagController noteTagController = new NoteTagController();
         Form2 FrmCarlendar=new Form2();
         int AppTime = 0;
-        string cache = string.Empty;
-        string oldcache = string.Empty;
+       
         FlowLayoutPanel fPanel = new FlowLayoutPanel();
         
         public Form1()
@@ -62,17 +62,11 @@ namespace SimpleNote
                
             }
         }
-        public static StringBuilder Cache(RichTextBox BoxCache)
-        {
-            StringBuilder cache = new StringBuilder();
-            cache.Append(BoxCache.Text);
-            return cache;
-        }
+     
         private void txtNoteContent_TextChanged(object sender, EventArgs e)
         {
             this.tsNote.Visible = true;
-            oldcache = cache;
-            cache = Cache(txtNoteContent).ToString();
+     
             
             if (this.btnAllNote.BackColor == Color.SkyBlue)
             {
@@ -125,6 +119,10 @@ namespace SimpleNote
             DataTable dt =noteController.getNotes();
             bs.DataSource = dt;
             DGVNoteName.DataSource = bs;
+            BindingSource bs2 = new BindingSource();
+            dt = noteTagController.GetNoteTag();
+            bs2.DataSource = dt;
+            this.DGVNoteTags.DataSource = bs2;
 
             if (DGVNoteName.Rows.Count != 0)
             {
@@ -165,12 +163,10 @@ namespace SimpleNote
             DataTable dt = noteController.getNotes();
             bs.DataSource = dt;
             dt.Dispose();
-            dt = noteController.getNotes( (int)DGVNoteName.CurrentRow.Cells[0].Value );
-            this.txtNoteContent.DataBindings.Add("Text", dt, "NoteContent");
-            this.txtNoteContent.DataBindings.Clear();
+            ShowNoteContent();
             this.DGVNoteName.ClearSelection();
             this.DGVNoteName.Rows[0].Selected = true;
-
+            
 
 
 
@@ -205,8 +201,23 @@ namespace SimpleNote
             this.txtNoteContent.DataBindings.Add("Text", dt, "NoteContent");
             this.txtNoteContent.DataBindings.Clear();
             this.txtNoteContent.SelectAll();
+            dt = noteTagController.GetNoteTag((int)DGVNoteName.CurrentRow.Cells[0].Value);
+            this.txtTag.DataBindings.Add("Text", dt, "NoteTag");
+            this.txtTag.DataBindings.Clear();
+            if (txtTag.Text == "" || txtTag.Text=="Add a tag...")
+            {
+                txtTag.Text = "Add a tag...";
+                this.txtTag.ForeColor = SystemColors.ControlDark;
+            }
+            else
+            {
+                this.txtTag.ForeColor = Color.Black;
+            }
             FontStyle style = textController.GetNoteContentFontStyle((int)DGVNoteName.CurrentRow.Cells[0].Value);
             this.txtNoteContent.SelectionFont = new Font(this.txtNoteContent.SelectionFont, style);
+            Color color = textController.GetNoteContentColor((int)this.DGVNoteName.CurrentRow.Cells[0].Value);       
+            this.txtNoteContent.ForeColor = color;
+
 
 
         }
@@ -228,6 +239,10 @@ namespace SimpleNote
                 DataTable dt = noteController.getNotes();
                 bs.DataSource = dt;
                 DGVNoteName.DataSource = bs;
+                BindingSource bs2 = new BindingSource();
+                dt = noteTagController.GetNoteTag();
+                bs2.DataSource = dt;
+                this.DGVNoteTags.DataSource = bs2;
                 this.txtNoteContent.Visible = true;
                 this.txtTag.Visible = true;
                 this.tsNote.Visible = true;
@@ -459,10 +474,8 @@ namespace SimpleNote
 
         private void undoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            txtNoteContent.Text = oldcache;
-            txtNoteContent.SelectionStart = txtNoteContent.Text.Length;
-            undoToolStripMenuItem.Enabled = false;
-            redoToolStripMenuItem.Enabled = true;
+            txtNoteContent.Undo();
+            this.redoToolStripMenuItem.Enabled = true;
 
         }
 
@@ -473,9 +486,7 @@ namespace SimpleNote
 
         private void redoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            txtNoteContent.Text = oldcache;       
-            redoToolStripMenuItem.Enabled = false;
-            undoToolStripMenuItem.Enabled = true;
+            txtNoteContent.Redo();
 
         }
 
@@ -687,7 +698,9 @@ namespace SimpleNote
             //txtNoteContent.BackColor= textColorToolStripMenuItem.BackColor;
          if(colorDialog1.ShowDialog()==DialogResult.OK)
             {
-               txtNoteContent.ForeColor = colorDialog1.Color;
+              this.txtNoteContent.ForeColor = colorDialog1.Color;
+              Boolean check = textController.UpdateNoteContentColor(colorDialog1.Color,(int)this.DGVNoteName.CurrentRow.Cells[0].Value);
+              if (check == false) MessageBox.Show("Error");
             }
         
         }
@@ -696,6 +709,14 @@ namespace SimpleNote
         {
 
             FrmCarlendar.ShowDialog();
+            FrmCarlendar.FormClosed += FrmCarlendar_FormClosed;
+        }
+
+        private void FrmCarlendar_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            fPanel.Controls.Clear();
+            fPanel.AutoScroll = true;
+            getJobs();
         }
 
         private void tmNotify_Tick(object sender, EventArgs e)
@@ -723,8 +744,11 @@ namespace SimpleNote
             {
                 this.txtTag.Text = "Add a tag...";
                 this.txtTag.ForeColor = SystemColors.ControlDark ;
-
             }
+            BindingSource bs2 = new BindingSource();
+            DataTable dt = noteTagController.GetNoteTag();
+            bs2.DataSource = dt;
+            this.DGVNoteTags.DataSource = bs2;
         }
 
         private void newNoteToolStripMenuItem_Click_1(object sender, EventArgs e)
@@ -747,7 +771,13 @@ namespace SimpleNote
 
         private void txtTag_TextChanged(object sender, EventArgs e)
         {
-
+            if (txtTag.Text.Length > 0 && txtTag.Text != "Add a tag...")
+            {
+                Boolean check = noteTagController.UpdateNoteTag((int)this.DGVNoteName.CurrentRow.Cells[0].Value, txtTag.Text);
+                if (check == false)
+                    MessageBox.Show("Error");
+            }  
+            
         }
 
         private void Form1_SizeChanged(object sender, EventArgs e)
@@ -756,6 +786,23 @@ namespace SimpleNote
             fPanel.AutoScroll = true;
             getJobs();
             
+        }
+
+        private void DGVNoteTags_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            DataTable dt = noteTagController.getNotes(this.DGVNoteTags.CurrentRow.Cells[0].Value.ToString());
+            bs.DataSource = dt;
+            DGVNoteName.DataSource = bs;
+            ShowNoteContent();
+        }
+
+        private void DGVNoteTags_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            this.DGVNoteTags.ClearSelection();
+            DataTable dt = noteController.getNotes();
+            bs.DataSource = dt;
+            DGVNoteName.DataSource = bs;
+            ShowNoteContent();
         }
     }
 }

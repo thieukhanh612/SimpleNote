@@ -34,7 +34,7 @@ namespace SimpleNote.Controllers
         }
         public override DataTable getNotes()
         {
-            DataTable dt = data.readdata("  SELECT Note.NoteName, RemindNote.NoteDateReminded, RemindNote.NoteStatus FROM(Note join RemindNote on Note.NoteID = RemindNote.NoteId) WHERE RemindNote.NoteStatus<>'DONE' ORDER BY RemindNote.NoteDateReminded;");
+            DataTable dt = data.readdata("  SELECT Note.NoteName, RemindNote.NoteDateReminded, RemindNote.NoteStatus,RemindNote.NoteId FROM(Note join RemindNote on Note.NoteID = RemindNote.NoteId) WHERE RemindNote.NoteStatus<>'DONE' ORDER BY RemindNote.NoteDateReminded;");
             return dt;
         }
         public override bool DeleteNote(int IDNote)
