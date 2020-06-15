@@ -34,7 +34,7 @@ namespace SimpleNote.Controllers
         }
         public virtual DataTable getNotes(string SearchNote)
         {
-            DataTable dt = data.readdata("SELECT NoteName FROM Note WHERE CHARINDEX('" + SearchNote + "',NoteName) <>0 AND NoteId NOT IN (SELECT NoteId FROM TrashNote) ORDER BY NoteId DESC;");
+            DataTable dt = data.readdata("SELECT NoteId, NoteName FROM Note WHERE CHARINDEX('" + SearchNote + "',NoteName) <>0 AND NoteId NOT IN (SELECT NoteId FROM TrashNote) ORDER BY NoteId DESC;");
             return dt;
         }
         public DataTable getNoteName(int IDNote)
@@ -57,7 +57,16 @@ namespace SimpleNote.Controllers
             Boolean check = data.excedata("DELETE FROM Note WHERE NoteId=" + IDNote + ";");
             return check;
         }
-      
+        public virtual DataTable getNotesbyNoteContent(string NoteContent)
+        {
+            DataTable dt = data.readdata("SELECT NoteId, NoteName FROM Note WHERE CHARINDEX('" + NoteContent + "',NoteContent) <>0 AND NoteId NOT IN (SELECT NoteId FROM TrashNote) ORDER BY NoteId DESC;");
+            return dt;
+        }
+        public virtual DataTable getNotesbyNoteTag(string NoteTag)
+        {
+            DataTable dt = data.readdata("SELECT NoteId,NoteName FROM Note WHERE CHARINDEX('" + NoteTag + "',NoteTag) <>0 AND NoteId NOT IN (SELECT NoteId FROM TrashNote) ORDER BY NoteId DESC;");
+            return dt;
+        }
 
     }
 

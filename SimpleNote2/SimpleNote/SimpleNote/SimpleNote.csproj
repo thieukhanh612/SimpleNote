@@ -241,5 +241,26 @@
   <ItemGroup>
     <None Include="Resources\Untitled.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\asdasdasd1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Remind.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Information.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\NoteCOntent.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Note tag.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TrashBin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Carlendar.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -28,6 +28,7 @@ namespace SimpleNote
         TextController textController = new TextController();
         NoteTagController noteTagController = new NoteTagController();
         Form2 FrmCarlendar=new Form2();
+        Frmhelp frmHelp = new Frmhelp();
         int AppTime = 0;
        
         FlowLayoutPanel fPanel = new FlowLayoutPanel();
@@ -298,6 +299,10 @@ namespace SimpleNote
             this.txtTag.ReadOnly = true;
             bs.DataSource = dt;
             this.DGVNoteName.DataSource = bs;
+            BindingSource bs2 = new BindingSource();
+            dt = trashNoteController.getNoteTag();
+            bs2.DataSource = dt;
+            this.DGVNoteTags.DataSource = bs2;
             if (DGVNoteName.Rows.Count != 0)
             {
                 this.txtNoteContent.Visible = true;
@@ -340,6 +345,10 @@ namespace SimpleNote
             this.txtTag.ReadOnly = false;
             bs.DataSource = dt;
             DGVNoteName.DataSource = bs;
+            BindingSource bs2 = new BindingSource();
+            dt = noteTagController.GetNoteTag();
+            bs2.DataSource = dt;
+            this.DGVNoteTags.DataSource = bs2;
             if (DGVNoteName.Rows.Count != 0)
             {
                 this.txtNoteContent.Visible = true;
@@ -384,6 +393,10 @@ namespace SimpleNote
                 DataTable dt = trashNoteController.getNotes();
                 bs.DataSource = dt;
                 this.DGVNoteName.DataSource = bs;
+                BindingSource bs2 = new BindingSource();
+                dt = trashNoteController.getNoteTag();
+                bs2.DataSource = dt;
+                this.DGVNoteTags.DataSource = bs2;
                 if (DGVNoteName.Rows.Count == 0)
                 {
                     this.txtNoteContent.Visible = false;
@@ -406,6 +419,10 @@ namespace SimpleNote
                 DataTable dt = trashNoteController.getNotes();
                 bs.DataSource = dt;
                 this.DGVNoteName.DataSource = bs;
+                BindingSource bs2 = new BindingSource();
+                dt = trashNoteController.getNoteTag();
+                bs2.DataSource = dt;
+                this.DGVNoteTags.DataSource = bs2;
                 if (DGVNoteName.Rows.Count == 0)
                 {
                     this.txtNoteContent.Visible = false;
@@ -419,36 +436,106 @@ namespace SimpleNote
 
         private void toolStripTextBox1_TextChanged(object sender, EventArgs e)
         {
-            if (this.btnAllNote.BackColor == Color.SkyBlue)
+            if (toolStripMenuItem1.Checked == true)
             {
-                if (toolStripTextBox1.Text.Length > 0)
+                if (this.btnAllNote.BackColor == Color.SkyBlue)
                 {
-                    DataTable dt = noteController.getNotes( toolStripTextBox1.Text );
-                    bs.DataSource = dt;
-                    this.DGVNoteName.DataSource = bs;
+                    if (toolStripTextBox1.Text.Length > 0)
+                    {
+                        DataTable dt = noteController.getNotes(toolStripTextBox1.Text);
+                        bs.DataSource = dt;
+                        this.DGVNoteName.DataSource = bs;
+                    }
+                    else
+                    {
+                        DataTable dt = noteController.getNotes();
+                        bs.DataSource = dt;
+                        DGVNoteName.DataSource = bs;
+                    }
                 }
-                else
+                else if (this.btnTrashNote.BackColor != Color.White)
                 {
-                    DataTable dt = noteController.getNotes();
-                    bs.DataSource = dt;
-                    DGVNoteName.DataSource = bs;
+                    if (toolStripTextBox1.Text.Length > 0)
+                    {
+                        DataTable dt = trashNoteController.getNotes(toolStripTextBox1.Text);
+                        bs.DataSource = dt;
+                        this.DGVNoteName.DataSource = bs;
+                    }
+                    else
+                    {
+                        DataTable dt = trashNoteController.getNotes();
+                        bs.DataSource = dt;
+                        DGVNoteName.DataSource = bs;
+                    }
                 }
             }
-            else if(this.btnTrashNote.BackColor != Color.White)
+            else if (toolStripMenuItem2.Checked == true)
             {
-                if (toolStripTextBox1.Text.Length > 0)
+                if (this.btnAllNote.BackColor == Color.SkyBlue)
                 {
-                    DataTable dt = trashNoteController.getNotes( toolStripTextBox1.Text );
-                    bs.DataSource = dt;
-                    this.DGVNoteName.DataSource = bs;
+                    if (toolStripTextBox1.Text.Length > 0)
+                    {
+                        DataTable dt = noteController.getNotesbyNoteTag(toolStripTextBox1.Text);
+                        bs.DataSource = dt;
+                        this.DGVNoteName.DataSource = bs;
+                    }
+                    else
+                    {
+                        DataTable dt = noteController.getNotes();
+                        bs.DataSource = dt;
+                        DGVNoteName.DataSource = bs;
+                    }
                 }
-                else
+                else if (this.btnTrashNote.BackColor != Color.White)
                 {
-                    DataTable dt = trashNoteController.getNotes();
-                    bs.DataSource = dt;
-                    DGVNoteName.DataSource = bs;
+                    if (toolStripTextBox1.Text.Length > 0)
+                    {
+                        DataTable dt = trashNoteController.getNotesbyNoteTag(toolStripTextBox1.Text);
+                        bs.DataSource = dt;
+                        this.DGVNoteName.DataSource = bs;
+                    }
+                    else
+                    {
+                        DataTable dt = trashNoteController.getNotes();
+                        bs.DataSource = dt;
+                        DGVNoteName.DataSource = bs;
+                    }
                 }
             }
+            else if (toolStripMenuItem3.Checked == true)
+            {
+                if (this.btnAllNote.BackColor == Color.SkyBlue)
+                {
+                    if (toolStripTextBox1.Text.Length > 0)
+                    {
+                        DataTable dt = noteController.getNotesbyNoteContent(toolStripTextBox1.Text);
+                        bs.DataSource = dt;
+                        this.DGVNoteName.DataSource = bs;
+                    }
+                    else
+                    {
+                        DataTable dt = noteController.getNotes();
+                        bs.DataSource = dt;
+                        DGVNoteName.DataSource = bs;
+                    }
+                }
+                else if (this.btnTrashNote.BackColor != Color.White)
+                {
+                    if (toolStripTextBox1.Text.Length > 0)
+                    {
+                        DataTable dt = trashNoteController.getNotesbyNoteTag(toolStripTextBox1.Text);
+                        bs.DataSource = dt;
+                        this.DGVNoteName.DataSource = bs;
+                    }
+                    else
+                    {
+                        DataTable dt = trashNoteController.getNotes();
+                        bs.DataSource = dt;
+                        DGVNoteName.DataSource = bs;
+                    }
+                }
+            }
+
 
         }
 
@@ -803,6 +890,30 @@ namespace SimpleNote
             bs.DataSource = dt;
             DGVNoteName.DataSource = bs;
             ShowNoteContent();
+        }
+
+        private void MenuSearchSelection_DropDownItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+            if (this.MenuSearchSelection.DropDownItems[1].Selected)
+            {
+                this.toolStripMenuItem1.Checked = false ;
+                this.toolStripMenuItem3.Checked = false;
+            }
+            else if (this.MenuSearchSelection.DropDownItems[0].Selected)
+            {
+                this.toolStripMenuItem2.Checked = false;
+                this.toolStripMenuItem3.Checked = false;
+            }
+            else if (this.MenuSearchSelection.DropDownItems[2].Selected)
+            {
+                this.toolStripMenuItem1.Checked = false;
+                this.toolStripMenuItem2.Checked = false;
+            }
+        }
+
+        private void helpToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            frmHelp.ShowDialog();
         }
     }
 }

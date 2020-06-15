@@ -26,10 +26,6 @@ namespace SimpleNote.Controllers
             DataTable dt = data.readdata("SELECT Note.NoteTag FROM Note WHERE NoteId =" + IDNote + ";");
             return dt;
         }
-        public override DataTable getNotes(string SearchNote)
-        {
-            DataTable dt = data.readdata("SELECT NoteId, NoteName FROM Note WHERE NoteTag='" + SearchNote + "';");
-            return dt;
-        }
+
     }
 }

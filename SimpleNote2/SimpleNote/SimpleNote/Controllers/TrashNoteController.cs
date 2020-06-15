@@ -31,5 +31,20 @@ namespace SimpleNote.Controllers
             Boolean check = data.excedata("DELETE FROM TrashNote WHERE NoteId=" + IDNote + ";");
             return check;
         }
+        public DataTable getNoteTag()
+        {
+            DataTable dt = data.readdata("SELECT DISTINCT Note.NoteTag FROM NOTE WHERE NoteId IN (SELECT Note.NoteId  FROM Note, TrashNote WHERE Note.NoteId = TrashNote.NoteId) AND Note.NoteTag<> 'NULL';");
+            return dt;
+        }
+        public override DataTable getNotesbyNoteTag(string NoteTag)
+        {
+            DataTable dt = data.readdata("SELECT NoteId,NoteName FROM Note WHERE CHARINDEX('" + NoteTag + "',NoteTag) <>0 AND NoteId IN (SELECT NoteId FROM TrashNote) ORDER BY NoteId DESC;");
+            return dt;
+        }
+        public override DataTable getNotesbyNoteContent(string NoteContent)
+        {
+            DataTable dt = data.readdata("SELECT NoteId, NoteName FROM Note WHERE CHARINDEX('" + NoteContent + "',NoteContent) <>0 AND NoteId IN (SELECT NoteId FROM TrashNote) ORDER BY NoteId DESC;");
+            return dt;
+        }
     }
 }
