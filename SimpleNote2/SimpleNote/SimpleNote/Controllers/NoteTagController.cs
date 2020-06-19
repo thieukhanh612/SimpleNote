@@ -26,6 +26,6 @@ namespace SimpleNote.Controllers
             DataTable dt = data.readdata("SELECT Note.NoteTag FROM Note WHERE NoteId =" + IDNote + ";");
             return dt;
         }
-
+    
     }
 }

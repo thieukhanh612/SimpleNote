@@ -877,7 +877,7 @@ namespace SimpleNote
 
         private void DGVNoteTags_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            DataTable dt = noteTagController.getNotes(this.DGVNoteTags.CurrentRow.Cells[0].Value.ToString());
+            DataTable dt = noteTagController.getNotesbyNoteTag(this.DGVNoteTags.CurrentRow.Cells[0].Value.ToString());
             bs.DataSource = dt;
             DGVNoteName.DataSource = bs;
             ShowNoteContent();
