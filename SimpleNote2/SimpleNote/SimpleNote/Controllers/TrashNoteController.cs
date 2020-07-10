@@ -23,7 +23,7 @@ namespace SimpleNote.Controllers
         }
         public override DataTable getNotes(string SearchNote)
         {
-            DataTable dt = data.readdata("SELECT NoteName FROM Note WHERE CHARINDEX('" + SearchNote + "',NoteName) <>0 AND NoteId IN (SELECT NoteId FROM TrashNote) ORDER BY NoteId DESC;");
+            DataTable dt = data.readdata("SELECT NoteId,NoteName FROM Note WHERE CHARINDEX('" + SearchNote + "',NoteName) <>0 AND NoteId IN (SELECT NoteId FROM TrashNote) ORDER BY NoteId DESC;");
             return dt;
         }
         public override bool DeleteNote(int IDNote)
